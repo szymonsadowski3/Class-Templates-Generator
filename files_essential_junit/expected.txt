@@ -1,0 +1,20 @@
+package pl.edu.agh.kis;
+/**
+ * To jest wygenerowana automatycznie klasa KlasaTestowa1
+ *
+ */
+public class KlasaTestowa1 {
+    /**
+     * Domyslny konstruktor klasy KlasaTestowa1
+     */
+    public KlasaTestowa1() {
+        // metoda wygenerowana - nalezy uzupelnic implementacje
+    }
+    /**
+     * Metoda main automatycznie wygenerowana 
+     * @param args tablica argumentow przekazanych do programu
+     */
+    public static void main(String[] args) {
+        System.out.println("Metoda jeszcze nie jest zaimplementowana - tylko wygenerowany wzorzec.");
+    }
+}
