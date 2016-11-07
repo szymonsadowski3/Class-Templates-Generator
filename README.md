@@ -8,7 +8,7 @@ Java Application which quickly generates Java projects with blank-class-files, t
 
 * [Example of full command-file](#example-of-full-command-file)
 
-## Command line arguments
+## Command line arguments :arrow_right:
 
 You should specify exactly 2 arguments at command line
 
@@ -20,7 +20,7 @@ For example:
 
 classnames.txt output_project
 
-## Syntax in file
+## Syntax in file :pencil2:
 
 ### First String is in format PACKAGE_NAME.CLASS_NAME
 Examples:
@@ -69,7 +69,7 @@ They are self-describing:
 
 * main=false
 
-## Example of full command-file
+## Example of full command-file :memo:
 
 pl.sadowski.Mario int=something byte=bajcik main_javadoc=false
 
