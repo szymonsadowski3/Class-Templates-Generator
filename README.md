@@ -18,7 +18,7 @@ You should specify exactly 2 arguments at command line
 
 For example:
 
-classnames.txt output_project
+> classnames.txt output_project
 
 ## Syntax in file :pencil2:
 
@@ -56,7 +56,12 @@ Examples:
 
 * String=FIELD_NAME
 
-For example: int=something will generate field "int something;", and Setter & Getter for it
+For example: 
+
+
+> int=something 
+
+will generate field "int something;", and Setter & Getter for it
 
 #### Controlling commands
 They are self-describing:
