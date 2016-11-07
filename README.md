@@ -1,6 +1,13 @@
 # Class-Templates-Generator
 Java Application which quickly generates Java projects with blank-class-files, that will be ready to be filled with Your code
 
+# Manual Contents
+* [Command line arguments](#command-line-arguments)
+
+* [Syntax in file](#syntax-in-file)
+
+* [Example of full command-file](#example-of-full-command-file)
+
 ## Command line arguments
 
 You should specify exactly 2 arguments at command line
@@ -65,5 +72,7 @@ They are self-describing:
 ## Example of full command-file
 
 pl.sadowski.Mario int=something byte=bajcik main_javadoc=false
+
 pl.mycompany.ClassB main=false constructor_javadoc=false
+
 org.perpetua.xul String=lux class_javadoc=false
