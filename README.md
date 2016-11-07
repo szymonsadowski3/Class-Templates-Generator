@@ -30,7 +30,7 @@ Examples:
 * pl.mycompany.ClassB
   
 ### Further Strings are in format COMMAND=VALUE 
-(I distinguish 2 types:
+(I distinguish 2 types):
 
 * Field Commands 
 
