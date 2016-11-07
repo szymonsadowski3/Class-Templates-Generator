@@ -2,11 +2,11 @@
 Java Application which quickly generates Java projects with blank-class-files, that will be ready to be filled with Your code
 
 # Manual Contents
-* [Command line arguments](#command-line-arguments)
+* [Command line arguments](#command-line-arguments-arrow_right)
 
-* [Syntax in file](#syntax-in-file)
+* [Syntax in file](#syntax-in-file-pencil2)
 
-* [Example of full command-file](#example-of-full-command-file)
+* [Example of full command-file](#example-of-full-command-file-memo)
 
 ## Command line arguments :arrow_right:
 
