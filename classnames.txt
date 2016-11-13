@@ -1,0 +1,4 @@
+pl.sadowski.Mario int=something byte=bajcik main_javadoc=false String=something
+   
+       
+pl.mojafirma.KlasaB main=false constructor_javadoc=false

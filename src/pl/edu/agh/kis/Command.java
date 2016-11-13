@@ -48,5 +48,4 @@ public class Command {
 	public String getValue() {
 		return value;
 	}
-
 }
