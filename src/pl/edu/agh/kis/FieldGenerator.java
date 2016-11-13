@@ -39,7 +39,7 @@ public class FieldGenerator {
 	static ArrayList<String> generateCode(Command command) {
 		ArrayList<String> toReturn = new ArrayList<String>();
 		if (checkIfCommandRefersToField(command)) {
-			toReturn.add(System.lineSeparator());//SEPARATOR
+			toReturn.add("");//SEPARATOR
 			toReturn.add(generateField(command.getKey(), command.getValue()));
 			toReturn.addAll(generateSetter(command.getKey(), command.getValue()));
 			toReturn.addAll(generateGetter(command.getKey(), command.getValue()));
@@ -71,10 +71,11 @@ public class FieldGenerator {
 	 */
 	static ArrayList<String> generateSetter(String type, String name) {
 		ArrayList<String> lines = new ArrayList<String>();
-		lines.add(System.lineSeparator());//SEPARATOR
+		lines.add("");//SEPARATOR
 		lines.add("    public void set" + Character.toUpperCase(name.charAt(0)) + name.substring(1) + "(" + type + " " + name + ") {");
 		lines.add("        this." + name + " = " + name + ";");
 		lines.add("    }");
+		
 		return lines;
 	}
 	
@@ -89,7 +90,7 @@ public class FieldGenerator {
 	 */
 	static ArrayList<String> generateGetter(String type, String name) {
 		ArrayList<String> lines = new ArrayList<String>();
-		lines.add(System.lineSeparator());//SEPARATOR
+		lines.add("");//SEPARATOR
 		lines.add("    public " + type + " get" + Character.toUpperCase(name.charAt(0)) + name.substring(1) + "() {");
 		lines.add("        return " + name + ";");
 		lines.add("    }");

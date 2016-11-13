@@ -32,8 +32,12 @@ public class FileReader {
 		BufferedReader br = new BufferedReader(r);
 		String line;
 
-		while ((line = br.readLine()) != null)
+		while ((line = br.readLine()) != null) {
+			if (line.trim().length() == 0)
+				continue;
+				
 			linesList.add(line);
+		}
 		
 		br.close();
 		

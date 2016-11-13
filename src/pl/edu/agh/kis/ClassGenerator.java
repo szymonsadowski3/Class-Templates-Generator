@@ -3,6 +3,10 @@ package pl.edu.agh.kis;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * ClassGenerator class, which performs generating source code of class blank
@@ -46,23 +50,23 @@ public class ClassGenerator {
 	ArrayList<String> generateClass(String name, String pack) {
 		ArrayList<String> generatedLines = new ArrayList<String>();
 
-		generatedLines.add(TextGenerator.getPackage(pack));
+		generatedLines.add(TemplateElementsGenerator.getPackage(pack));
 
 		if (structure.hasClassJavadoc())
-			generatedLines.addAll(TextGenerator.getClassJavadoc(name));
+			generatedLines.addAll(TemplateElementsGenerator.getClassJavadoc(name));
 
-		generatedLines.add(TextGenerator.getClassPrototype(name) + " {");
+		generatedLines.add(TemplateElementsGenerator.getClassPrototype(name) + " {");
 
 		if (structure.hasConstructorJavadoc())
-			generatedLines.addAll(TextGenerator.getDefaultConstructorJavadoc(name));
+			generatedLines.addAll(TemplateElementsGenerator.getDefaultConstructorJavadoc(name));
 
-		generatedLines.addAll(TextGenerator.getDefaultConstructorBody(name));
+		generatedLines.addAll(TemplateElementsGenerator.getDefaultConstructorBody(name));
 
 		if (structure.hasMainJavadoc() && structure.hasMain())
-			generatedLines.addAll(TextGenerator.getMainJavadoc(name));
+			generatedLines.addAll(TemplateElementsGenerator.getMainJavadoc(name));
 
 		if (structure.hasMain())
-			generatedLines.addAll(TextGenerator.getMainBody(name));
+			generatedLines.addAll(TemplateElementsGenerator.getMainBody(name));
 
 		generatedLines.add("}");
 
@@ -85,12 +89,12 @@ public class ClassGenerator {
 		if (packageAndClassName.equals(""))
 			throw new IOException("Empty command string!");
 
-		String[] splitted = TextUtilities.splitByDots(packageAndClassName);
+		String[] splitted = Utilities.splitByDots(packageAndClassName);
 		String[] directoryStructure = Arrays.copyOf(splitted, splitted.length - 1);
 
 		String packageDirectoryPath = DirectoryCreator.createDirs(projectRoot, directoryStructure);
-		String packageName = TextUtilities.extractPackageNameFromInput(packageAndClassName);
-		String className = TextUtilities.extractClassNameFromInput(packageAndClassName);
+		String packageName = Utilities.extractPackageNameFromInput(packageAndClassName);
+		String className = Utilities.extractClassNameFromInput(packageAndClassName);
 
 		ArrayList<String> generatedSource = generateClass(className, packageName);
 
@@ -136,16 +140,16 @@ public class ClassGenerator {
 		if (packageAndClassName.equals(""))
 			throw new IOException("Empty command string!");
 
-		String[] splitted = TextUtilities.splitByDots(packageAndClassName);
+		String[] splitted = Utilities.splitByDots(packageAndClassName);
 		String[] directoryStructure = Arrays.copyOf(splitted, splitted.length - 1);
 
 		String packageDirectoryPath = DirectoryCreator.createDirs(projectRoot, directoryStructure);
 
-		String packageName = TextUtilities.extractPackageNameFromInput(packageAndClassName); // With
+		String packageName = Utilities.extractPackageNameFromInput(packageAndClassName); // With
 																								// dot
-		packageName = TextUtilities.removeLastCharacter(packageName);
+		packageName = Utilities.removeLastCharacter(packageName);
 
-		String className = TextUtilities.extractClassNameFromInput(packageAndClassName);
+		String className = Utilities.extractClassNameFromInput(packageAndClassName);
 
 		String[] entries = Arrays.copyOfRange(input, 1, input.length); // Array with 1st element removed											
 
@@ -164,10 +168,12 @@ public class ClassGenerator {
 			generatedSource.addAll(generatedSource.size() - 1, performed);
 		}*/
 		
+		structure.deleteDuplicateFields();
+		
 		generatedSource.addAll( generatedSource.size() - 1, structure.generateCodeConnectedWithFields() );
 
 		String resultFilePath = packageDirectoryPath + "/" + className + ".java";
-
+	
 		FileWriter.writeLines(resultFilePath, generatedSource.toArray(new String[0]));
 
 		cleanClassStructure();
@@ -283,5 +289,23 @@ class ClassStructure {
 	 */
 	public ArrayList<Command> getFields() {
 		return fields;
+	}
+	
+	public void deleteDuplicateFields() {
+		/*ArrayList<Command> clean = new ArrayList<Command>();
+		
+		HashMap<String, String> toReturn = new HashMap<String, String>();
+		
+		for(Command c : fields) {
+			toReturn.put(c.getValue(), c.getKey());
+		}
+		
+		for (Map.Entry<String, String> entry : toReturn.entrySet()) {
+			clean.add(new Command(entry.getValue(), entry.getKey()));
+		}
+		
+		fields = clean;*/
+		
+		fields = Utilities.removeDuplicateValuesFromListOfCommands(fields);
 	}
 }
