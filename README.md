@@ -2,13 +2,13 @@
 Java Application which quickly generates Java projects with blank-class-files, that will be ready to be filled with Your code
 
 # Manual Contents
-* [Command line arguments](#command-line-arguments-arrow_right)
+* [Commandline arguments](#command-line-arguments-arrow_right)
 
-* [Syntax in file](#syntax-in-file-pencil2)
+* [Syntax in command-file](#syntax-in-file-pencil2)
 
 * [Example of full command-file](#example-of-full-command-file-memo)
 
-## Command line arguments :arrow_right:
+## Commandline arguments :arrow_right:
 
 You should specify exactly 2 arguments at command line
 
@@ -20,7 +20,7 @@ For example:
 
 > classnames.txt output_project
 
-## Syntax in file :pencil2:
+## Syntax in command-file :pencil2:
 
 ### First String is in format PACKAGE_NAME.CLASS_NAME
 Examples:
@@ -30,11 +30,13 @@ Examples:
 * pl.mycompany.ClassB
   
 ### Further Strings are in format COMMAND=VALUE 
-(I distinguish 2 types):
+(I distinguish 3 types):
 
-* Field Commands 
+* [Field Commands](#field-commands-there-will-be-also-setters--getters-generated-alongside)
 
-* Controlling commands (they will switch off some code segments in generated class)
+* [Method Commands](#method-commands-with-parameters)
+
+* [Controlling commands (they will switch off some code segments in generated class)](#controlling-commands)
 
 #### Field Commands (There will be also Setters & Getters generated alongside)
 
@@ -91,6 +93,8 @@ They are self-describing:
 
 ```
 pl.example.Mario int=something byte=rawData main_javadoc=false constructor_javadoc=false
+
 pl.example.Generator String=shape double=amplitude boolean(double:amplitude,String:shape)=generate  String()=getShape void(String:shape)=setShape
+
 pl.example.Turtle  String=name  boolean(double:strength)=jump  void(String:word)=say  main=false
 ```
