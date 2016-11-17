@@ -25,7 +25,7 @@ For example:
 ### First String is in format PACKAGE_NAME.CLASS_NAME
 Examples:
 
-* pl.sadowski.Mario
+* pl.example.Mario
 
 * pl.mycompany.ClassB
   
@@ -63,6 +63,19 @@ For example:
 
 will generate field "int something;", and Setter & Getter for it
 
+#### Method Commands (with parameters)
+
+Syntax for this command is: [TYPE]([PARAMETER_TYPE]:[PARAMETER_NAME],[PARAMETER_TYPE]:[PARAMETER_NAME],...)=[METHOD_NAME]
+
+Watch out! There should be no whitespaces between parentheses!
+
+Examples of correct Method Commands:
+
+```
+pl.example.Generator boolean(double:amplitude,String:shape)=generate  String()=getShape void(String:shape)=setShape
+pl.example.Turtle boolean(double:strength)=jump  void(String:word)=say
+```
+
 #### Controlling commands
 They are self-describing:
 
@@ -77,7 +90,7 @@ They are self-describing:
 ## Example of full command-file :memo:
 
 ```
-pl.sadowski.Mario int=something byte=bajcik main_javadoc=false
-pl.mycompany.ClassB main=false constructor_javadoc=false
-org.perpetua.xul String=lux class_javadoc=false
+pl.example.Mario int=something byte=rawData main_javadoc=false constructor_javadoc=false
+pl.example.Generator String=shape double=amplitude boolean(double:amplitude,String:shape)=generate  String()=getShape void(String:shape)=setShape
+pl.example.Turtle  String=name  boolean(double:strength)=jump  void(String:word)=say  main=false
 ```
