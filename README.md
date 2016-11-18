@@ -94,7 +94,7 @@ They are self-describing:
 ```
 pl.example.Mario int=something byte=rawData main_javadoc=false constructor_javadoc=false
 
-pl.example.Generator String=shape double=amplitude boolean(double:amplitude,String:shape)=generate  String()=getShape void(String:shape)=setShape
+pl.devices.Generator String=shape double=amplitude boolean(double:amplitude,String:shape)=generate  String()=getShape void(String:shape)=setShape
 
-pl.example.Turtle  String=name  boolean(double:strength)=jump  void(String:word)=say  main=false
+pl.animals.Turtle  String=name  boolean(double:strength)=jump  void(String:word)=say  main=false
 ```
