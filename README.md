@@ -1,6 +1,8 @@
 # Class-Templates-Generator
 Java Application which quickly generates Java projects with blank-class-files, that will be ready to be filled with Your code
 
+[![head.jpg](https://s22.postimg.org/5v3u4def5/head.jpg)](https://postimg.org/image/9epru6h4t/)
+
 # Manual Contents
 * [Commandline arguments](#command-line-arguments-arrow_right)
 
