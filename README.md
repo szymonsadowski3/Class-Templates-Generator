@@ -6,7 +6,7 @@ Java Application which quickly generates Java projects with blank-class-files, t
 # Manual Contents
 * [Commandline arguments](#command-line-arguments-arrow_right)
 
-* [Syntax in command-file](#syntax-in-file-pencil2)
+* [Syntax in command-file](#syntax-in-command-file-pencil2)
 
 * [Example of full command-file](#example-of-full-command-file-memo)
 
