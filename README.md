@@ -4,7 +4,7 @@ Java Application which quickly generates Java projects with blank-class-files, t
 [![head.jpg](https://s22.postimg.org/5v3u4def5/head.jpg)](https://postimg.org/image/9epru6h4t/)
 
 # Manual Contents
-* [Commandline arguments](#command-line-arguments-arrow_right)
+* [Commandline arguments](#commandline-arguments-arrow_right)
 
 * [Syntax in command-file](#syntax-in-command-file-pencil2)
 
